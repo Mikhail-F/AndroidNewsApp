@@ -23,8 +23,7 @@ class BreakingNewsFragment: Fragment(R.layout.fragment_breaking_news) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as NewsActivity).viewModel
         binding = FragmentBreakingNewsBinding.bind(view)
-        newsAdapter = NewsAdapter()
-        binding.rvBreakingNews.adapter = newsAdapter
+        setupRecyclerView()
 
         viewModel.breakingNews.observe(viewLifecycleOwner) { response ->
             when(response) {
@@ -37,7 +36,6 @@ class BreakingNewsFragment: Fragment(R.layout.fragment_breaking_news) {
 //                            Log.d("Lognjsws", "$it")
 //                            it.copy()
 //                        })
-                        Log.d("BreakingNewsFragment", "URAAA ${newsResponse.articles.size}")
                     }
                 }
                 is Resource.Error -> {

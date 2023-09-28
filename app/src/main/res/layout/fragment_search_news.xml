@@ -23,6 +23,8 @@
         android:clipToPadding="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etSearch"
+        tools:listitem="@layout/item_article_preview"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:layout_editor_absoluteX="0dp" />
 
     <ProgressBar
